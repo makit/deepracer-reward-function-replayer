@@ -1,8 +1,15 @@
+#!/usr/bin/env python3
+
 import numpy as np
 import os
 
 
 def load_track(world_name):
+    """
+    Load a track from a file
+    :param world_name: The name of the world to load
+    :return: A tuple of center, inside and outside waypoints
+    """
     print("Loading track: " + world_name)
     track_file_name = "./tracks/" + world_name + ".npy"
     if os.path.isfile(track_file_name):

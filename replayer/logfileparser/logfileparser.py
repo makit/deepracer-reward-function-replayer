@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
 def parse_log_file(file_location):
+    """
+    Parse a log file and return the world name and a list of completed trace logs
+    :param file_location: The location of the log file to parse
+    :return: The world name and a list of completed trace logs
+    """
     print("Reading log file: " + file_location)
 
     world_name = ""

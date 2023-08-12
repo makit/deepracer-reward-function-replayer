@@ -30,7 +30,7 @@ SIM_TRACE_LOG:685,466,-1.3376,3.0873,-94.6072,30.00,1.30,9,0.5535,False,True,82.
 
 ## Run the application
 ```bash
-python replayer/replayer.py --log deepracer-0_robomaker.1.qruf1ugxngzium4frmxj61jcu.log
+python replayer/replayer.py --log deepracer-0_robomaker.1.v9qs5tnpjussimq7xcylz4qgl.log
 ```
 
 TODO

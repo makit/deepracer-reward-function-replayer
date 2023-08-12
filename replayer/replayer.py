@@ -2,6 +2,7 @@
 
 import argparse
 import os
+from analyser import analyser
 from logfileparser import logfileparser
 from trackloader import trackloader
 
@@ -21,6 +22,9 @@ def main():
             print("Log file parsed successfully, world name: " + world_name + ", number of completed trace logs: " + str(len(completed_trace_logs)))
 
         center_waypoints, inside_waypoints, outside_waypoints = trackloader.load_track(world_name)
+
+        for trace_log in completed_trace_logs:
+            analyser.analyse_episode(trace_log)
     else:
         print("No valid log file supplied with logs argument")
         exit()
