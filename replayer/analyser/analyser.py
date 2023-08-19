@@ -16,16 +16,23 @@ def analyse_episode(episode):
     total_reward = round(sum([result['reward'] for result in episode]), 3)
     number_steps = len(episode)
     expected_steps = int(time * 15)
-    discounted_reward_9 = utils.discount_rewards(episode, 0.9)
-    discounted_reward_99 = utils.discount_rewards(episode, 0.99)
-    discounted_reward_999 = utils.discount_rewards(episode, 0.999)
+    rewards = rewards = [result['reward'] for result in episode]
+    discounted_reward_9 = utils.discount_rewards(rewards, 0.9)
+    discounted_reward_99 = utils.discount_rewards(rewards, 0.99)
+    discounted_reward_999 = utils.discount_rewards(rewards, 0.999)
     total_discounted_reward_9 = round(sum(discounted_reward_9), 3)
     total_discounted_reward_99 = round(sum(discounted_reward_99), 3)
     total_discounted_reward_999 = round(sum(discounted_reward_999), 3)
 
     print("")
-    print(f"Episode: {episode[0]['episode']}\tTime: {time}\tNumber of Steps: {number_steps}\t\tExpected Steps: {expected_steps}")
-    print(f"Episode: {episode[0]['episode']}\tReward: {total_reward}\tDiscounted 0.9: {total_discounted_reward_9}\tDiscounted 0.99: {total_discounted_reward_99}\tDiscounted 0.999: {total_discounted_reward_999}")
+    print("EPISODE", episode[0]['episode'])
+    print("Time:", time)
+    print("Number of Steps:", number_steps)
+    print("Expected Steps:", expected_steps)
+    print("Reward:", total_reward)
+    print("Discounted 0.9:", total_discounted_reward_9)
+    print("Discounted 0.99:", total_discounted_reward_99)
+    print("Discounted 0.999:", total_discounted_reward_999)
 
     return {
         'time': time,
