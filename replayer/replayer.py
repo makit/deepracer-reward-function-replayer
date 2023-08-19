@@ -72,6 +72,8 @@ def main():
                 print("Discounted Reward Difference 0.99:", discounted_99 - analysed_episode['total_discounted_reward_99'])
                 print("Discounted Reward Difference 0.999:", discounted_999 - analysed_episode['total_discounted_reward_999'])
 
+    print("")
+    print("All results written to " + output_dir + "/")   
 
 if __name__ == "__main__":
     main()
