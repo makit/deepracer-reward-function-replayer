@@ -11,9 +11,15 @@ def reward_function(params):
 
     next_point = waypoints[closest_waypoints[1]]
     prev_point = waypoints[closest_waypoints[0]]
+    print("Next Point: ", next_point)
+
     track_direction = math.atan2(next_point[1] - prev_point[1], next_point[0] - prev_point[0])
     track_direction = math.degrees(track_direction)
     direction_diff = abs(track_direction - heading)
+    print("Track Direction: ", track_direction)
+    print("Heading: ", heading)
+    print("Direction Diff: ", direction_diff)
+
     if direction_diff > 180:
         direction_diff = 360 - direction_diff
 
@@ -22,4 +28,5 @@ def reward_function(params):
     else:
         reward = ((2 - (direction_diff / 60)) ** 3) / 8
 
+    print("Reward: ", reward)
     return reward

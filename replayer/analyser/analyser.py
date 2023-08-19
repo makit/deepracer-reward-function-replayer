@@ -42,7 +42,7 @@ def analyse_episode(episode):
         'discounted_reward_9': discounted_reward_9,
         'discounted_reward_99': discounted_reward_99,
         'discounted_reward_999': discounted_reward_999,
-        'total_discounted_reward_9': discounted_reward_9,
-        'total_discounted_reward_99': discounted_reward_99,
-        'total_discounted_reward_999': discounted_reward_999
+        'total_discounted_reward_9': total_discounted_reward_9,
+        'total_discounted_reward_99': total_discounted_reward_99,
+        'total_discounted_reward_999': total_discounted_reward_999
     }
