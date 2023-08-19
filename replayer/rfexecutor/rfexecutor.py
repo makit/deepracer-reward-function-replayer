@@ -42,7 +42,7 @@ def run_through_new_reward_function(episode, center_waypoints, inside_waypoints,
         }
         reward = rf.reward_function(params)
         rewards.append(reward)
-        print(f"SIM_TRACE_LOG:{trace['episode']},{trace['step']},{trace['x']},{trace['y']},{trace['heading']},{trace['steering_angle']},{trace['speed']},{trace['decision']},{reward},{trace['is_reversed']},{trace['all_wheels_on_track']},{trace['progress']},{trace['closest_waypoint']},{trace['track_length']},{trace['timestamp']},{trace['state']}")
+        print(f"SIM_TRACE_LOG:{trace['episode']},{trace['step']},{trace['x']},{trace['y']},{trace['heading']},{trace['steering_angle']},{trace['speed']},{trace['decision']},{reward},{trace['is_reversed']},{trace['all_wheels_on_track']},{trace['progress']},{trace['closest_waypoint']},{trace['track_length']},{trace['timestamp']},0.00")
         print("")
 
     return rewards

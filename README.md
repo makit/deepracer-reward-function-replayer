@@ -39,3 +39,51 @@ Add your reward function to the `new_reward_function.py` file.
 ```bash
 python replayer/replayer.py --log log_file_name.log
 ```
+
+# Example Output
+* The output will be in the `output` directory and a sub directory named after the input log file.
+* It will contain a file for each completed episode found in the input file.
+* Each file will contain the print output of the reward function and SIM_TRACE_LOG lines to mirror what robomaker does
+* At the bottom of the file will be details around the old reward and new reward
+
+```
+...
+Next Point:  [-2.357342481613159, -0.08637823164463043]
+Track Direction:  177.2035940150002
+Heading:  -178.9834
+Direction Diff:  356.1869940150002
+Reward:  0.9076717299590026
+SIM_TRACE_LOG:63,490,-2.1543,-0.1288,-178.9834,13.0,2.5,17,0.9076717299590026,False,True,99.8275,11,76.75,1943.072,0.00
+
+Next Point:  [-2.6585274934768677, -0.0807376503944397]
+Track Direction:  178.92709228213857
+Heading:  -174.9086
+Direction Diff:  353.83569228213855
+Reward:  0.8536731477101511
+SIM_TRACE_LOG:63,491,-2.3595,-0.1548,-174.9086,13.0,2.5,17,0.8536731477101511,True,True,100.0,12,76.75,1943.124,0.00
+
+OVERALL STATS
+Time: 32.899
+Total reward: 307.588
+Number of steps: 491
+Expected number of steps: 493
+Total discounted reward 0.9: 3038.02
+Total discounted reward 0.99: 24743.16
+Total discounted reward 0.999: 64099.762
+Reward Based on New Reward Function: 374.780
+Discounted Reward Based on New Reward Function 0.9: 3674.536
+Discounted Reward Based on New Reward Function 0.99: 30092.341
+Discounted Reward Based on New Reward Function 0.999: 79272.305
+Reward Difference: 67.192
+Discounted Reward Difference 0.9: 636.516
+Discounted Reward Difference 0.99: 5349.181
+Discounted Reward Difference 0.999: 15172.543
+```
+
+From the above example you can see:
+* The number of steps for the episode was 491, but based on the expected 15 per second it should have been 493. 
+* The total reward for the episode was 307.588
+* Discounted rewards on this are shown at different gamma values for demonstration purposes: 3038.02/24743.16/64099.762
+* Through the new reward function then the reward would have been 374.780
+* This is a difference of 67.192 higher. Discounted values shown too.
+* The trace can show the differnce at each step for comparison, including any print statements within the function
